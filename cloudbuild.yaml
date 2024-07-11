@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/cloud-429015/container2/container2:latest', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/cloud-429015/container2/container2:latest']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
