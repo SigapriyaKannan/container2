@@ -33,9 +33,9 @@ public class CalculateTotalProductController {
             int productIndex = -1;
             int amountIndex = -1;
             for (int i = 0; i < headers.length; i++) {
-                if (headers[i].equals("product")) {
+                if (headers[i].trim().equals("product")) {
                     productIndex = i;
-                } else if (headers[i].equals("amount")) {
+                } else if (headers[i].trim().equals("amount")) {
                     amountIndex = i;
                 }
             }
@@ -46,8 +46,8 @@ public class CalculateTotalProductController {
 
             String[] line;
             while ((line = reader.readNext()) != null) {
-                if (line[productIndex].equals(product)) {
-                    total += Integer.parseInt(line[amountIndex]);
+                if (line[productIndex].trim().equals(product)) {
+                    total += Integer.parseInt(line[amountIndex].trim());
                 }
             }
 
