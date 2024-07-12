@@ -23,7 +23,6 @@ public class CalculateTotalProductController {
         String fileName = new File(file).getName();
 
         int total = 0;
-
         try (CSVReader reader = new CSVReader(new FileReader(file))) {
             String[] headers = reader.readNext();
             if (headers == null) {
